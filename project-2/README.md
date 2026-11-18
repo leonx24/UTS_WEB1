@@ -8,7 +8,7 @@ REST CRUD API sederhana menggunakan **PHP Native** dan **MySQL / MariaDB (phpMyA
 - **NPM:** `24552011205`
 - **Kelas:** `TIF RP 24B CID`
 
-## Struktur Folder
+## Struktur Folderr
 
 ```text
 project-2/

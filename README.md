@@ -2,7 +2,7 @@
 
 Repository tugas Pemrograman Web 1 oleh **Affari Rizky Febriansyah** (`24552011205` — **TIF RP 24B CID**).
 
-## Daftar Proyek
+## Daftar Proyekk
 
 | Folder | Deskripsi | Dokumentasi |
 | :--- | :--- | :--- |
