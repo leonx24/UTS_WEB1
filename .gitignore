@@ -1,6 +1,6 @@
-node_modules
-dist
+project-1/node_modules
+project-1/dist
+project-2/.env
 .taste-skill
 .DS_Store
 *.local
-

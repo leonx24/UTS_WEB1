@@ -1,0 +1,19 @@
+meta {
+  name: 05 - PUT Update Company Info
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{baseUrl}}/api/info/7
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "title": "Integrasi Pembayaran & Rekonsiliasi",
+    "summary": "Layanan penghubung gateway pembayaran dengan rekonsiliasi faktur otomatis.",
+    "lead_division": "Divisi Integrasi & Keuangan"
+  }
+}

@@ -1,0 +1,22 @@
+meta {
+  name: 04 - POST Create Company Info
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/api/info
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "code": "INF-07",
+    "category": "Layanan Baru",
+    "title": "Integrasi Sistem Pembayaran & Webhook",
+    "summary": "Penghubung gateway pembayaran dengan pencatatan faktur otomatis berbasis API.",
+    "lead_division": "Divisi Integrasi API",
+    "read_time": "4 menit baca"
+  }
+}
