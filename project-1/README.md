@@ -59,7 +59,7 @@ UTS_WEB1/
 └── vite.config.ts
 ```
 
-## Cara Menjalankan di Lokal
+## Cara Menjalankan di Lokall
 
 ```bash
 npm install
