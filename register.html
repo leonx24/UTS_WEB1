@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrasi Akun — RakitStudio</title>
+  <meta name="description" content="Daftarkan akun baru untuk mengakses portal informasi dan Menu Utama RakitStudio.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/styles/main.css">
+</head>
+<body class="bg-paper text-ink antialiased">
+  <div id="site-header"></div>
+
+  <main class="pt-[72px]">
+    <section class="py-14 lg:py-24">
+      <div class="mx-auto grid max-w-[1280px] items-start gap-12 px-6 lg:grid-cols-12 lg:px-16">
+        <div class="lg:col-span-5">
+          <h1 class="text-3xl font-medium tracking-[-0.03em] text-ink sm:text-4xl">
+            Buat Akun Portal
+          </h1>
+          <p class="mt-4 max-w-md text-base leading-relaxed text-muted">
+            Akun yang Anda daftarkan tersimpan secara lokal pada browser dan dapat langsung digunakan pada halaman Login untuk masuk ke Menu Utama.
+          </p>
+
+          <div class="mt-8 overflow-hidden border border-line bg-stone">
+            <img
+              src="/images/team-engineering.jpg"
+              alt="Kolaborasi tim rekayasa RakitStudio"
+              class="aspect-[16/10] w-full object-cover"
+            >
+          </div>
+
+          <dl class="mt-6 divide-y divide-line border-y border-line text-sm">
+            <div class="py-3.5">
+              <dt class="font-medium text-ink">Nama Lengkap</dt>
+              <dd class="mt-0.5 text-muted">Minimal 3 karakter sesuai identitas pengguna.</dd>
+            </div>
+            <div class="py-3.5">
+              <dt class="font-medium text-ink">Alamat Email</dt>
+              <dd class="mt-0.5 text-muted">Format email valid dan belum pernah didaftarkan.</dd>
+            </div>
+            <div class="py-3.5">
+              <dt class="font-medium text-ink">Kata Sandi</dt>
+              <dd class="mt-0.5 text-muted">Minimal 6 karakter dan cocok dengan konfirmasi.</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="lg:col-span-6 lg:col-start-7">
+          <div class="border border-line bg-paper p-6 sm:p-10">
+            <h2 class="text-xl font-medium text-ink">Formulir Registrasi</h2>
+            <p class="mt-1 text-sm text-muted">Lengkapi data di bawah untuk membuat akun baru.</p>
+
+            <form id="register-form" class="mt-6 space-y-5" novalidate>
+              <div>
+                <label for="reg-fullname" class="block text-sm font-medium text-ink">Nama Lengkap</label>
+                <input
+                  id="reg-fullname"
+                  name="fullName"
+                  type="text"
+                  autocomplete="name"
+                  placeholder="Affari Rizky Febriansyah"
+                  aria-describedby="reg-fullname-error"
+                  class="mt-2 block h-12 w-full rounded border border-line-strong bg-paper px-4 text-base text-ink placeholder:text-muted/60 focus:border-pine focus:outline-none aria-[invalid=true]:border-red-600"
+                >
+                <p id="reg-fullname-error" class="mt-1.5 text-xs font-medium text-red-700"></p>
+              </div>
+
+              <div>
+                <label for="reg-email" class="block text-sm font-medium text-ink">Alamat Email</label>
+                <input
+                  id="reg-email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  placeholder="nama@perusahaan.co.id"
+                  aria-describedby="reg-email-error"
+                  class="mt-2 block h-12 w-full rounded border border-line-strong bg-paper px-4 text-base text-ink placeholder:text-muted/60 focus:border-pine focus:outline-none aria-[invalid=true]:border-red-600"
+                >
+                <p id="reg-email-error" class="mt-1.5 text-xs font-medium text-red-700"></p>
+              </div>
+
+              <div>
+                <label for="reg-password" class="block text-sm font-medium text-ink">Kata Sandi</label>
+                <input
+                  id="reg-password"
+                  name="password"
+                  type="password"
+                  autocomplete="new-password"
+                  placeholder="Minimal 6 karakter"
+                  aria-describedby="reg-password-error"
+                  class="mt-2 block h-12 w-full rounded border border-line-strong bg-paper px-4 text-base text-ink placeholder:text-muted/60 focus:border-pine focus:outline-none aria-[invalid=true]:border-red-600"
+                >
+                <p id="reg-password-error" class="mt-1.5 text-xs font-medium text-red-700"></p>
+              </div>
+
+              <div>
+                <label for="reg-confirm" class="block text-sm font-medium text-ink">Konfirmasi Kata Sandi</label>
+                <input
+                  id="reg-confirm"
+                  name="confirmPassword"
+                  type="password"
+                  autocomplete="new-password"
+                  placeholder="Ulangi kata sandi"
+                  aria-describedby="reg-confirm-error"
+                  class="mt-2 block h-12 w-full rounded border border-line-strong bg-paper px-4 text-base text-ink placeholder:text-muted/60 focus:border-pine focus:outline-none aria-[invalid=true]:border-red-600"
+                >
+                <p id="reg-confirm-error" class="mt-1.5 text-xs font-medium text-red-700"></p>
+              </div>
+
+              <div id="register-status" role="status" class="hidden rounded px-4 py-3 text-sm"></div>
+
+              <button
+                type="submit"
+                class="inline-flex h-12 w-full items-center justify-center rounded bg-pine px-6 text-base font-medium text-white transition hover:bg-pine-dark cursor-pointer"
+              >
+                Daftarkan Akun
+              </button>
+            </form>
+
+            <p class="mt-6 border-t border-line pt-5 text-sm text-muted">
+              Sudah punya akun?
+              <a href="/login.html" class="font-medium text-pine hover:underline">Masuk sekarang</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script type="module" src="/src/pages/register.ts"></script>
+</body>
+</html>

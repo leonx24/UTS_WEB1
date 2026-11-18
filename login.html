@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masuk Portal — RakitStudio</title>
+  <meta name="description" content="Masuk ke portal internal RakitStudio untuk mengakses Menu Utama dan ringkasan layanan perusahaan.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/styles/main.css">
+</head>
+<body class="bg-paper text-ink antialiased">
+  <div id="site-header"></div>
+
+  <main class="pt-[72px]">
+    <section class="py-14 lg:py-24">
+      <div class="mx-auto grid max-w-[1280px] items-start gap-12 px-6 lg:grid-cols-12 lg:px-16">
+        <div class="lg:col-span-5">
+          <h1 class="text-3xl font-medium tracking-[-0.03em] text-ink sm:text-4xl">
+            Masuk ke Menu Utama
+          </h1>
+          <p class="mt-4 max-w-md text-base leading-relaxed text-muted">
+            Gunakan akun yang sudah didaftarkan pada halaman Registrasi atau pakai akun demo di bawah ini untuk menguji validasi login.
+          </p>
+
+          <div class="mt-8 overflow-hidden border border-line bg-stone">
+            <img
+              src="/images/studio-hero.jpg"
+              alt="Interior ruang kerja studio RakitStudio"
+              class="aspect-[16/10] w-full object-cover"
+            >
+          </div>
+
+          <div class="mt-6 border border-line bg-stone p-6">
+            <p class="text-sm font-medium text-ink">Akun Demo Pengujian</p>
+            <dl class="mt-4 divide-y divide-line border-y border-line text-sm">
+              <div class="flex items-center justify-between gap-4 py-3">
+                <dt class="text-muted">Email</dt>
+                <dd class="font-mono text-xs text-ink">affari@rakitstudio.id</dd>
+              </div>
+              <div class="flex items-center justify-between gap-4 py-3">
+                <dt class="text-muted">Kata Sandi</dt>
+                <dd class="font-mono text-xs text-ink">Password123</dd>
+              </div>
+            </dl>
+            <button
+              type="button"
+              id="fill-demo-btn"
+              class="mt-4 inline-flex h-10 w-full items-center justify-center rounded border border-line-strong bg-paper px-4 text-xs font-medium text-ink transition hover:border-ink cursor-pointer"
+            >
+              Isi Otomatis Akun Demo
+            </button>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 lg:col-start-7">
+          <div id="active-session-notice" class="mb-6 hidden border border-pine/40 bg-stone p-4 text-sm text-ink">
+            Anda saat ini sudah memiliki sesi aktif.
+            <a href="/menu.html" class="ml-1 font-medium text-pine underline">Buka Menu Utama</a>.
+          </div>
+
+          <div class="border border-line bg-paper p-6 sm:p-10">
+            <h2 class="text-xl font-medium text-ink">Formulir Login</h2>
+            <p class="mt-1 text-sm text-muted">Masukkan email dan kata sandi akun Anda.</p>
+
+            <form id="login-form" class="mt-6 space-y-5" novalidate>
+              <div>
+                <label for="login-email" class="block text-sm font-medium text-ink">Alamat Email</label>
+                <input
+                  id="login-email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  placeholder="nama@rakitstudio.id"
+                  aria-describedby="login-email-error"
+                  class="mt-2 block h-12 w-full rounded border border-line-strong bg-paper px-4 text-base text-ink placeholder:text-muted/60 focus:border-pine focus:outline-none aria-[invalid=true]:border-red-600"
+                >
+                <p id="login-email-error" class="mt-1.5 text-xs font-medium text-red-700"></p>
+              </div>
+
+              <div>
+                <div class="flex items-center justify-between">
+                  <label for="login-password" class="block text-sm font-medium text-ink">Kata Sandi</label>
+                  <button type="button" id="toggle-login-password" class="text-xs font-medium text-pine hover:underline cursor-pointer">
+                    Tampilkan
+                  </button>
+                </div>
+                <input
+                  id="login-password"
+                  name="password"
+                  type="password"
+                  autocomplete="current-password"
+                  placeholder="Minimal 6 karakter"
+                  aria-describedby="login-password-error"
+                  class="mt-2 block h-12 w-full rounded border border-line-strong bg-paper px-4 text-base text-ink placeholder:text-muted/60 focus:border-pine focus:outline-none aria-[invalid=true]:border-red-600"
+                >
+                <p id="login-password-error" class="mt-1.5 text-xs font-medium text-red-700"></p>
+              </div>
+
+              <div id="login-status" role="status" class="hidden rounded px-4 py-3 text-sm"></div>
+
+              <button
+                type="submit"
+                class="inline-flex h-12 w-full items-center justify-center rounded bg-pine px-6 text-base font-medium text-white transition hover:bg-pine-dark cursor-pointer"
+              >
+                Masuk ke Menu Utama
+              </button>
+            </form>
+
+            <p class="mt-6 border-t border-line pt-5 text-sm text-muted">
+              Belum memiliki akun?
+              <a href="/register.html" class="font-medium text-pine hover:underline">Registrasi di sini</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script type="module" src="/src/pages/login.ts"></script>
+</body>
+</html>

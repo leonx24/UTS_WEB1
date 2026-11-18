@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Utama Portal — RakitStudio</title>
+  <meta name="description" content="Halaman Menu Utama internal RakitStudio setelah otentikasi berhasil.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/styles/main.css">
+</head>
+<body class="bg-stone text-ink antialiased">
+  <div id="site-header"></div>
+
+  <main class="pt-[72px]">
+    <section class="py-12 lg:py-16">
+      <div class="mx-auto max-w-[1280px] px-6 lg:px-16">
+        <div class="flex flex-col justify-between gap-6 border border-line bg-paper p-6 md:flex-row md:items-center md:p-8">
+          <div>
+            <p class="text-xs font-medium text-pine">Sesi Aktif Portal</p>
+            <h1 class="mt-1.5 text-2xl font-medium tracking-[-0.02em] text-ink sm:text-3xl">
+              Selamat datang, <span id="menu-user-name">Pengguna</span>
+            </h1>
+            <p class="mt-2 text-sm text-muted">
+              <span id="menu-user-email" class="text-ink">-</span> / <span id="menu-user-role">-</span> / Masuk <span id="menu-login-time">-</span>
+            </p>
+          </div>
+
+          <div class="flex flex-wrap gap-3">
+            <a href="/index.html" class="inline-flex h-10 items-center rounded border border-line-strong bg-paper px-4 text-sm font-medium text-ink transition hover:border-ink">
+              Halaman Utama
+            </a>
+            <button
+              type="button"
+              id="menu-logout-btn"
+              class="inline-flex h-10 items-center rounded bg-ink px-5 text-sm font-medium text-white transition hover:bg-ink/85 cursor-pointer"
+            >
+              Keluar Sesi
+            </button>
+          </div>
+        </div>
+
+        <div class="mt-8 grid border-l border-t border-line bg-paper sm:grid-cols-2 lg:grid-cols-4">
+          <a href="/detail.html?id=profil-perusahaan" class="group border-b border-r border-line p-6 transition-colors hover:bg-stone">
+            <span class="text-xs font-medium text-pine">Profil Studio</span>
+            <h2 class="mt-2 text-lg font-medium text-ink group-hover:text-pine transition-colors">Struktur &amp; Tim</h2>
+            <p class="mt-1.5 text-sm text-muted">Direktorat rekayasa dan siklus sprint Bandung.</p>
+          </a>
+          <a href="/detail.html?id=pengembangan-aplikasi-web" class="group border-b border-r border-line p-6 transition-colors hover:bg-stone">
+            <span class="text-xs font-medium text-pine">Layanan</span>
+            <h2 class="mt-2 text-lg font-medium text-ink group-hover:text-pine transition-colors">Aplikasi Bisnis</h2>
+            <p class="mt-1.5 text-sm text-muted">Spesifikasi pengembangan portal operasional.</p>
+          </a>
+          <a href="/detail.html?id=infrastruktur-cloud-devops" class="group border-b border-r border-line p-6 transition-colors hover:bg-stone">
+            <span class="text-xs font-medium text-pine">Infrastruktur</span>
+            <h2 class="mt-2 text-lg font-medium text-ink group-hover:text-pine transition-colors">Cloud &amp; Rilis</h2>
+            <p class="mt-1.5 text-sm text-muted">Otomasi deployment, backup harian, dan SLA 99.9%.</p>
+          </a>
+          <a href="/detail.html?id=audit-keamanan-sistem" class="group border-b border-r border-line p-6 transition-colors hover:bg-stone">
+            <span class="text-xs font-medium text-pine">Keamanan</span>
+            <h2 class="mt-2 text-lg font-medium text-ink group-hover:text-pine transition-colors">Audit Sistem</h2>
+            <p class="mt-1.5 text-sm text-muted">Evaluasi otentikasi dan sanitasi formulir.</p>
+          </a>
+        </div>
+
+        <div class="mt-8 border border-line bg-paper p-6 md:p-8">
+          <div class="flex flex-col justify-between gap-4 border-b border-line pb-6 sm:flex-row sm:items-end">
+            <div>
+              <h2 class="text-xl font-medium text-ink">Direktori Dokumen Perusahaan</h2>
+              <p class="mt-1 text-sm text-muted">Cari atau pilih dokumen perusahaan untuk membuka halaman detail.</p>
+            </div>
+            <div class="w-full sm:w-72">
+              <label for="menu-search" class="sr-only">Cari dokumen perusahaan</label>
+              <input
+                id="menu-search"
+                type="search"
+                placeholder="Cari judul atau divisi..."
+                class="h-10 w-full rounded border border-line-strong bg-paper px-3.5 text-sm text-ink placeholder:text-muted/70 focus:border-pine focus:outline-none"
+              >
+            </div>
+          </div>
+
+          <div class="mt-4 overflow-x-auto">
+            <table class="w-full border-collapse text-left">
+              <thead>
+                <tr class="border-b border-line text-xs font-medium text-muted">
+                  <th class="py-3 pr-4">Kategori</th>
+                  <th class="py-3 pr-4">Judul Informasi</th>
+                  <th class="hidden py-3 pr-4 md:table-cell">Divisi</th>
+                  <th class="hidden py-3 pr-4 sm:table-cell">Pembaruan</th>
+                  <th class="py-3 text-right">Tindakan</th>
+                </tr>
+              </thead>
+              <tbody id="menu-info-list"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script type="module" src="/src/pages/menu.ts"></script>
+</body>
+</html>
